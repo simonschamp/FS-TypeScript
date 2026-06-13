@@ -9,12 +9,15 @@
 If you're using Github, you can click on the "Use this template" button to create a new repository based on this starter kit.
 
 ## Clean example code
+
 The repo comes with some examples on how to do basic stuff. As this is not really needed in real projects, you can remove them by running:
+
 ```
 pnpm clean-up-example-code
 ```
 
 ## Manual clone
+
 clone this repository into your own project folder. and start working
 
 ```bash
@@ -103,3 +106,51 @@ All applications require a config mechanism, for example, `SLACK_API_TOKEN`. Thi
 #### License
 
 This code is released as is, under MIT license. Feel free to use it for free for both commercial and private projects. No warranty provided.
+
+The following procedures were taken to get the project working
+
+Running the project
+Clean up the project
+
+# remove old artifacts
+
+Git Bash
+
+> > > > rm -rf node_modules package-lock.json
+
+# Windows PowerShell:
+
+# rd /s /q node_modules
+
+# del package-lock.json
+
+# reinstall
+
+Git Bash
+
+> > > > npm install
+
+Upgrade npm (quick fix)
+
+> > > > npm install -g npm@latest
+> > > > Check the versions
+> > > > node -v
+> > > > npm -v
+
+Delete corrupted modules
+Git Bash
+Clear pnpm cache
+
+> > > > pnpm store prune
+
+Reinstall cleanly
+
+> > > > pnpm install
+> > > > Run the project
+> > > > pnpm run dev
+
+Working with Git
+If you want to detach from this repository into your own repository, do this:
+git remote remove origin
+git remote add origin YOUR_REPO_URL
+git push -u origin master
